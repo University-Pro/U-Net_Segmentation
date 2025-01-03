@@ -1,75 +1,75 @@
-# U-Net Segmentation Project
+# U-Net 分割项目
 
-## Overview
-Welcome to the **U-Net Segmentation Project**, a powerful and flexible tool for medical image segmentation. This repository provides an implementation of **U-Net** for segmentation tasks on datasets like **Synapse** and **ACDC**. The project is designed for simplicity and modularity, allowing users to train, test, and evaluate models using metrics such as **Dice Similarity Coefficient (DSC)** and **Hausdorff Distance (HD95)**.
+## 概述
+欢迎来到 **U-Net 分割项目**！这是一个强大且灵活的医学图像分割工具。本项目提供了 **U-Net** 的实现，支持在 **Synapse** 和 **ACDC** 数据集上的分割任务。项目设计注重简洁和模块化，用户可以通过 **Dice 相似系数 (DSC)** 和 **Hausdorff 距离 (HD95)** 等指标对模型进行训练、测试和评估。
 
-If you'd like to customize the network architecture, you can replace the provided `network.py` file with your own implementation.
-
----
-
-## Key Features
-- **Modular Design**: Easily swap out the network with your custom architecture.
-- **Comprehensive Metrics**: Evaluate segmentation quality using DSC and HD95.
-- **Dataset Compatibility**: Supports Synapse and ACDC datasets out of the box.
-- **Streamlined Setup**: Simplified environment management using Anaconda or Miniconda.
+如果您想定制网络架构，可以将提供的 `network.py` 文件替换为您自己的实现。
 
 ---
 
-## Installation and Setup
+## 主要特点
+- **模块化设计**：轻松替换网络架构，支持自定义。
+- **全面评估指标**：通过 DSC 和 HD95 评估分割质量。
+- **数据集兼容性**：开箱即用地支持 Synapse 和 ACDC 数据集。
+- **简化的安装配置**：使用 Anaconda 或 Miniconda 轻松管理环境。
 
-### Prerequisites
-It is recommended to use **Anaconda** or **Miniconda** for managing dependencies and Python versions. Install Anaconda or Miniconda before proceeding.
+---
 
-### Step 1: Create a Virtual Environment
-Run the following command to create a virtual environment:
+## 安装与配置
+
+### 先决条件
+建议使用 **Anaconda** 或 **Miniconda** 来管理依赖和 Python 版本。在开始前，请先安装 Anaconda 或 Miniconda。
+
+### 步骤 1：创建虚拟环境
+运行以下命令创建虚拟环境：
 
 ```bash
 conda create -n torch-env python=3.12
 ```
 
-### Step 2: Activate the Environment
-Activate the virtual environment with:
+### 步骤 2：激活环境
+通过以下命令激活虚拟环境：
 
 ```bash
 conda activate torch-env
 ```
 
-### Step 3: Install Required Packages
-Install all necessary dependencies using the `requirements.txt` file:
+### 步骤 3：安装必要的依赖
+使用 `requirements.txt` 文件安装所有必要的依赖：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> **Tip**: If you experience slow or blocked access to the official PyPI repository, consider using a mirror (e.g., [TUNA](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)).
+> **提示**：如果访问官方 PyPI 仓库速度较慢或受限，可以使用镜像（例如 [TUNA](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)）。
 
 ---
 
-## Usage
+## 使用方法
 
-### Training the Model
-To train the U-Net model on your dataset:
-1. Place your dataset in the appropriate directory as specified in the configuration file.
-2. Run the training script:
+### 训练模型
+要在您的数据集上训练 U-Net 模型：
+1. 将数据集放置在配置文件指定的目录中。
+2. 运行训练脚本：
 
 ```bash
 python train.py --config configs/config.yaml
 ```
 
-### Testing the Model
-After training, you can evaluate the model on the test set:
+### 测试模型
+训练完成后，您可以在测试集上评估模型：
 
 ```bash
 python test.py --model checkpoints/best_model.pth --config configs/config.yaml
 ```
 
-### Customizing the Network
-Replace the `network.py` file with your own network implementation. Ensure the new file adheres to the input-output specifications used in the training and testing scripts.
+### 自定义网络
+将 `network.py` 文件替换为您自己的网络实现。请确保新文件遵循训练和测试脚本中使用的输入输出规范。
 
 ---
 
-## Dataset Preparation
-Ensure your datasets are structured as follows:
+## 数据集准备
+确保您的数据集结构如下：
 ```
 datasets/
 ├── Synapse/
@@ -79,41 +79,41 @@ datasets/
 │   ├── train/
 │   ├── test/
 ```
-You can modify the paths in the configuration files (`configs/config.yaml`) as needed.
+您可以根据需要修改配置文件 (`configs/config.yaml`) 中的路径。
 
 ---
 
-## Metrics
-- **Dice Similarity Coefficient (DSC)**: Measures the overlap between predicted and ground truth masks.
-- **Hausdorff Distance (HD95)**: Evaluates the spatial accuracy of the segmentation boundaries.
+## 评估指标
+- **Dice 相似系数 (DSC)**：衡量预测分割与真实标签之间的重叠。
+- **Hausdorff 距离 (HD95)**：评估分割边界的空间精度。
 
 ---
 
-## Troubleshooting
-- **Slow Installation**: Use a PyPI mirror like TUNA.
-- **CUDA Issues**: Ensure your GPU drivers and CUDA toolkit are correctly installed and match the PyTorch version.
-- **Out of Memory (OOM) Errors**: Reduce the batch size in the configuration file.
+## 常见问题
+- **安装速度慢**：使用 PyPI 镜像，例如 TUNA。
+- **CUDA 问题**：确保您的 GPU 驱动程序和 CUDA 工具包正确安装，并与 PyTorch 版本匹配。
+- **内存不足 (OOM)**：在配置文件中减小批量大小。
 
 ---
 
-## Contributions
-Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
+## 贡献
+欢迎贡献代码！您可以提交问题、功能请求或拉取请求。
 
 ---
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+## 许可证
+本项目使用 [MIT License](LICENSE) 授权。
 
 ---
 
-## Acknowledgments
-Thanks to the open-source community for providing datasets and inspiring the development of this project.
+## 致谢
+感谢开源社区提供的数据集和对本项目的启发！
 
 ---
 
-## Contact
-For questions or support, feel free to contact the project maintainer:
-- **Email**: support@example.com
-- **GitHub Issues**: [Open an issue](https://github.com/your-repo/issues) 
+## 联系方式
+如有问题或需要支持，请联系项目维护者：
+- **邮箱**: support@example.com
+- **GitHub Issues**: [提交问题](https://github.com/your-repo/issues)
 
-Happy Segmenting! 🚀
+祝您分割愉快！🚀
