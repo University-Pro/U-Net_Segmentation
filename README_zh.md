@@ -1,7 +1,7 @@
 # U-Net 分割项目
 
 ## 概述
-欢迎来到 **U-Net 分割项目**！这是一个强大且灵活的医学图像分割工具。本项目提供了 **U-Net** 的实现，支持在 **Synapse** 和 **ACDC** 数据集上的分割任务。项目设计注重简洁和模块化，用户可以通过 **Dice 相似系数 (DSC)** 和 **Hausdorff 距离 (HD95)** 等指标对模型进行训练、测试和评估。
+本项目提供了 **U-Net** 的实现，支持在 **Synapse** 和 **ACDC** 数据集上的分割任务。项目设计注重简洁和模块化，用户可以通过 **Dice 相似系数 (DSC)** 和 **Hausdorff 距离 (HD95)** 等指标对模型进行训练、测试和评估。
 
 如果您想定制网络架构，可以将提供的 `network.py` 文件替换为您自己的实现。
 
@@ -79,7 +79,11 @@ datasets/
 │   ├── train/
 │   ├── test/
 ```
-您可以根据需要修改配置文件 (`configs/config.yaml`) 中的路径。
+
+Synapse数据集与ACDC数据集可通过下面的方式进行下载：
+* [百度网盘](https://pan.baidu.com/s/123)
+* [Google Drive](https://drive.google.com)
+* [阿里云盘](https://drive.aliyun.com)
 
 ---
 
