@@ -1,0 +1,7 @@
+# 忽略所有 .npz 文件
+# Ignore all .npz files
+*.npz
+
+# 忽略所有 .h5 文件
+# Ignore all .h5 files
+*.h5

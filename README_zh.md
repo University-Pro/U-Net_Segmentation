@@ -1,9 +1,9 @@
 # U-Net 分割项目
 
 ## 概述
-本项目提供了 **U-Net** 的实现，支持在 **Synapse** 和 **ACDC** 数据集上的分割任务。项目设计注重简洁和模块化，用户可以通过 **Dice 相似系数 (DSC)** 和 **Hausdorff 距离 (HD95)** 等指标对模型进行训练、测试和评估。
+本项目提供了 **U-Net** 的实现，支持在 **Synapse** 和 **ACDC** 数据集上的分割任务。用户可以通过 **Dice 相似系数 (DSC)** 和 **Hausdorff 距离 (HD95)** 等指标对模型进行训练、测试和评估。
 
-如果您想定制网络架构，可以将提供的 `network.py` 文件替换为您自己的实现。
+如果想使用自己的网络架构，可以将提供的 `network.py` 文件替换为自己的网络。
 
 ---
 
@@ -11,7 +11,7 @@
 - **模块化设计**：轻松替换网络架构，支持自定义。
 - **全面评估指标**：通过 DSC 和 HD95 评估分割质量。
 - **数据集兼容性**：开箱即用地支持 Synapse 和 ACDC 数据集。
-- **简化的安装配置**：使用 Anaconda 或 Miniconda 轻松管理环境。
+- **完整的安装配置**：使用 Anaconda 或 Miniconda 轻松管理环境。
 
 ---
 
@@ -53,8 +53,11 @@ pip install -r requirements.txt
 2. 运行训练脚本：
 
 ```bash
-python train.py --config configs/config.yaml
+python Train_Synapse.py --epochs 200 --batch_size 12 --learning_rate 1e-3 --log_path "./result/Unet/Synapse/Training.log" --img_size 224 --pth_path "./result/Unet/Synapse/Pth" --tensorboard_path "./result/Unet/Synapse/Train" --multi_gpu
 ```
+
+可选的参数如下：
+
 
 ### 测试模型
 训练完成后，您可以在测试集上评估模型：
